@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图标元素动画效果</title>
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+  <style>
+    .close {
+      cursor: pointer;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #96CEB4;
+      position: relative;
+    }
+    i {
+      color: #FFEEAD;
+      font-size: 48px;
+      position: absolute;
+      top: 8%;
+      left: 19%;
+    }
+
+    /*定义动画*/
+    @-webkit-keyframes spin { /*动画一直执行，一直旋转 兼容性写法。spin是关键帧的动画名称*/
+      form { /*动画起始状态*/
+        -webkit-transform: rotate(0deg);
+      }
+      to { /*动画结束状态*/
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @@keyframes spin {/*普通写法*/
+      form {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .close:hover i {
+      -webkit-animation: spin 1s linear infinite;/*鼠标hover时，i图标旋转,infinite表示动画无限循环*/
+      animation: spin 1s linear infinite;    
+    }
+
+  </style>
+</head>
+<body>
+  <div class="close"><i class="fa fa-close (alias) fa-5x"></i></div>
+</body>
+</html>
